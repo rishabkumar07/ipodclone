@@ -1,13 +1,26 @@
 import React from 'react';
+import ZingTouch from 'zingtouch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faFastForward,faPlay,faPause,faFastBackward} from '@fortawesome/free-solid-svg-icons'
+import {faFastForward,faPlay,faPause,faFastBackward} from '@fortawesome/free-solid-svg-icons'
 import '../css/wheel.css'
+
 class Wheel extends React.Component {
+
+    componentDidMount()
+    {
+        const touchArea = document.getElementsByClassName('wheel-container');
+        const wheel = touchArea[0];
+        const myRegion = new ZingTouch.Region(wheel);
+        myRegion.bind(wheel,'rotate',function(e)
+        {
+            console.log(e.detail);
+        })
+    }
     render()
     {
         return (
             <div className="outer">
-                <div className="wheel-container">
+                <div className="wheel-container" style={{touchAction:'none'}}>
                     <div className="wheel"></div>
                     <div id="menu">MENU</div>
                     <div id="forward">
@@ -28,5 +41,14 @@ class Wheel extends React.Component {
     }
   
 }
+
+
+   
+
+
+
+
+
+
 
 export default Wheel;

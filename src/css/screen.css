@@ -1,0 +1,68 @@
+#screen{
+    margin:10px;
+    border:2px solid black;
+    background-color: whitesmoke;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    border:1px solid #000000;
+    height: 30px;
+}
+#wifi{
+    display: flex;
+    align-items: center;
+    border:1px solid black;
+    justify-content: space-evenly;
+    width: 25%;
+}
+#time{
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    border:1px solid black;
+    justify-content: space-evenly;
+    width: 50%;
+}
+#battery{
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    border:1px solid black;
+    justify-content: space-evenly;
+    width: 25%;
+}
+#wifi-icon{
+    font-size:20px;
+    color:blue;
+}
+.screen-icon{
+    font-size:25px;
+}
+#battery-icon{
+    color:green;
+}
+
+#main{
+    display: flex;
+    border:1px solid black;
+    justify-content: space-evenly;
+}
+#left-block{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border:1px solid blue;
+    justify-content: center;
+}
+#left-block > p{
+    border-bottom:1px solid black;
+    text-align: center;
+    margin-top: 0;
+    padding:8px;
+    margin-bottom: 0px;
+}
+#right-block{
+    display: flex;
+    width:50%;
+}

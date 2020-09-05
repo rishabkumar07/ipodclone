@@ -1,8 +1,7 @@
-.outer{
-    background-color: gray;
-    width: 250px;
-    margin:auto;
-}
+/* .outer{
+    /* background-color: gray;
+    width: 250px; */
+
 .wheel-container{
     text-align: center;
     border:2px solid black;
@@ -12,8 +11,9 @@
     padding:10px;
     position: relative;
     margin: auto;
-    margin-top:40%;
-    cursor: pointer;
+    margin-top:25px;
+    margin-bottom: 10px;
+    /* cursor: pointer; */
     background-color: whitesmoke;
 }
 .wheel{
@@ -22,37 +22,42 @@
     border-radius: 50%;
     padding:30px;
     position: absolute;
-    top:35%;
-    left:35%;
+    top:37%;
+    left:36%;
     background-color:#adadad;
+    cursor: pointer;
 }
 #forward{
-    font-size: 20px;
+    font-size: 19px;
     position: absolute;
     right:20px;
     top:40%;
+    cursor: pointer;
 }
 #backward{
-    font-size: 20px;
+    font-size: 19px;
     position: absolute;
     left:20px;
     top:40%;
+    cursor: pointer;
 }
 #play-pause{
-    font-size: 18px;
+    font-size: 16px;
     position: absolute;
     bottom: 10px;
-    left: 37%;
+    left: 39%;
+    cursor: pointer;
 }
 #menu{
     width: 50px;
-    height: 30px;
+    height: 25px;
     border:1px solid #eeeeee;
     padding:4px;
     font-weight: 500;
     position: absolute;
     left:37%;
     top:20px;
+    cursor: pointer;
 
 }
 
