@@ -20,8 +20,8 @@ class Wheel extends React.Component {
     {
         return (
             <div className="outer">
-                <div className="wheel-container" style={{touchAction:'none'}}>
-                    <div className="wheel"></div>
+                <div className="wheel-container">
+                    <div id="wheel"></div>
                     <div id="menu">MENU</div>
                     <div id="forward">
                         <FontAwesomeIcon icon={faFastForward}  border className=""/>

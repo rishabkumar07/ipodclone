@@ -49,10 +49,9 @@ render()
             
             <div id="main">
                 <div id="left-block">
-                    <p>iNow Playing</p>
+                    <p className="active">iNow Playing</p>
                     <p>Songs</p>
-                    <p>Videos</p>
-                    <p>Camera</p>
+                    <p>Games</p>
                     <p>Settings</p>
                 </div>
 

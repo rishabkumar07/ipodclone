@@ -16,7 +16,7 @@
     /* cursor: pointer; */
     background-color: whitesmoke;
 }
-.wheel{
+#wheel{
     border: 2px solid black;
     width: 5px;
     border-radius: 50%;

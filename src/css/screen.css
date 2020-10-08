@@ -62,6 +62,9 @@
     padding:8px;
     margin-bottom: 0px;
 }
+#left-block p.active{
+    background: #3796dc;
+}
 #right-block{
     display: flex;
     width:50%;
