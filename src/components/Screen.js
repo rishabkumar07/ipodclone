@@ -1,62 +1,163 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBatteryFull,faHeadphones,faWifi} from '@fortawesome/free-solid-svg-icons'
+import React,{Component} from 'react';
+import ZingTouch from 'zingtouch';
 import '../css/screen.css'
 
-class Screen extends React.Component {
-    state = {
-        curTime:null,
-    }
-    componentDidMount()
+export default class Screen extends Component {
+    constructor(props)
     {
-        setInterval(()=>{
-            const date = new Date();
-            var hours = date.getHours();
-            var mins = date.getMinutes();
-            if(hours<10 )
-            {
-                hours = '0'+hours;
+        super(props);
+        this.state = {
+            screenMenu:[
+                {
+                    id:1,
+                    name:"iNow Playing",
+                    className:"inactive"
+                },
+                {
+                    id:2,
+                    name:"Songs",
+                    className:"inactive"
+                },
+                {
+                    id:3,
+                    name:"Camera",
+                    className:"inactive"
+                },
+                {
+                    id:4,
+                    name:"Games",
+                    className:"inactive"
+                },
+                {
+                    id:5,
+                    name:"Settings",
+                    className:"inactive"
+                },
+            ],
+            activeMenu:1
+        }
+    }
+
+    menuClick = () => {
+        const activeMenu = this.state.activeMenu;
+        const {screen,updateScreen} = this.props;
+
+        if(screen===1 && activeMenu===1)
+        {
+            updateScreen(2);
+        }
+        if(screen===1 && activeMenu===2)
+        {
+            updateScreen(3);
+        }
+        if(screen===1 && activeMenu===3)
+        {
+            updateScreen(4);
+        }
+        if(screen===1 && activeMenu===4)
+        {
+            updateScreen(5);
+        }
+        if(screen===1 && activeMenu===5)
+        {
+            updateScreen(6);
+        }
+
+    }
+
+    wheelRotation = (e) =>
+    {
+        if(e.detail.distanceFromOrigin<0)
+        {
+            e.detail.distanceFromOrigin *=-1;
+            e.detail.distanceFromOrigin %= 150;
+            if (e.detail.distanceFromOrigin > 0 && e.detail.distanceFromOrigin < 30) {
+                this.setState({ activeMenu: 5 })
             }
-            if(mins<10)
-            {
-                mins = '0'+mins;
+            else if (e.detail.distanceFromOrigin > 30 && e.detail.distanceFromOrigin < 60) {
+                this.setState({ activeMenu: 4 })
             }
-            
-            this.setState({
-                currTime: hours+':'+mins, 
-            })
-        },1000)
-    }  
+            else if (e.detail.distanceFromOrigin > 60 && e.detail.distanceFromOrigin < 90) {
+                this.setState({ activeMenu: 3 })
+            }
+            else if (e.detail.distanceFromOrigin > 90 && e.detail.distanceFromOrigin < 120) {
+                this.setState({ activeMenu: 2 })
+            }
+            else if (e.detail.distanceFromOrigin > 120 && e.detail.distanceFromOrigin < 150) {
+                this.setState({ activeMenu: 1 })
+            }
+        }
+        else{
+            e.detail.distanceFromOrigin %= 150;
+        
+        
+            if (e.detail.distanceFromOrigin > 0 && e.detail.distanceFromOrigin < 30) {
+                this.setState({ activeMenu: 1 })
+            }
+            else if (e.detail.distanceFromOrigin > 30 && e.detail.distanceFromOrigin < 60) {
+                this.setState({ activeMenu: 2 })
+            }
+            else if (e.detail.distanceFromOrigin > 60 && e.detail.distanceFromOrigin < 90) {
+                this.setState({ activeMenu: 3 })
+            }
+            else if (e.detail.distanceFromOrigin > 90 && e.detail.distanceFromOrigin < 120) {
+                this.setState({ activeMenu: 4 })
+            }
+            else if (e.detail.distanceFromOrigin > 120 && e.detail.distanceFromOrigin < 150) {
+                this.setState({ activeMenu: 5 })
+            }
+        }
+    }
+    menubtn = () =>
+    {
+        // const activeMenu = this.state.activeMenu;
+        const {screen,updateScreen} = this.props;
+        if(screen===1)
+        {
+            updateScreen(0);
+        }
+
+    }
+    componentDidMount() {
+        const wheelRotation = this.wheelRotation
+        var target = document.getElementsByClassName('wheel-container')[0];
+        var menuClick  = document.getElementById('wheel');
+        menuClick.onclick = this.menuClick 
+        var region = new ZingTouch.Region(target);
+        // binding the region where rotate property will be applied
+        region.bind(target, 'rotate', function (e) {
+            wheelRotation(e);
+        });
+        var menubtn = document.getElementById('menu');
+        menubtn.onclick = this.menubtn;
+    }
+     
 render()
 {
+    const {activeMenu,screenMenu} = this.state;
     return(
         <div id="screen">
-            <div  id="nav">
-                <div id="wifi">
-                    <h3>iPod</h3>
-                    <FontAwesomeIcon icon={faWifi} id="wifi-icon" />
-                </div>
-                
-                <div id="time">
-                   <h3>{this.state.currTime}</h3>
-                </div>
-                
-                <div id="battery">
-                    <FontAwesomeIcon icon={faHeadphones} id="headphone-icon" className="screen-icon" />
-                    <FontAwesomeIcon icon={faBatteryFull} id="battery-icon" className="screen-icon" />
-                </div>
-            </div>
-            
             <div id="main">
                 <div id="left-block">
-                    <p className="active">iNow Playing</p>
-                    <p>Songs</p>
-                    <p>Games</p>
-                    <p>Settings</p>
+                    <ul>
+                    {screenMenu.map(item => {
+                        return (
+                            <div key={item.id}>
+                                <li className={(item.id === activeMenu ? item.className = "active" : item.className = "inactive") }>
+                                        {item.name}
+                                </li>
+                                
+                            </div>
+                        );
+                    })}
+                    </ul>
                 </div>
-
                 <div id="right-block">
-                    <img  alt="wallpaper"/>
+                    {activeMenu === 1 && <img src='' alt='image' id='scimg' />}
+                    {activeMenu === 2 && <img src='' alt='image' id='scimg' />}
+                    {activeMenu === 3 && <img src='' alt='image' id='scimg' />}
+                    {activeMenu === 4 && <img src='' alt='image' id='scimg' />}
+                    {activeMenu === 5 && <img src='' alt='image' id='scimg' />}
                 </div>
  
             </div>
@@ -69,4 +170,3 @@ render()
 
 
 }
-export default Screen;

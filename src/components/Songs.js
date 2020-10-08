@@ -35,13 +35,13 @@ export default class Songs extends Component{
         const {updateScreen,screen} = this.props;
 
         if (screen === 3 && activeMenu === 0 ) {
-            updateScreen(6)
-        }
-        if (screen === 3 && activeMenu === 1  ) {
             updateScreen(7)
         }
-        if (screen === 3  && activeMenu === 2) {
+        if (screen === 3 && activeMenu === 1  ) {
             updateScreen(8)
+        }
+        if (screen === 3  && activeMenu === 2) {
+            updateScreen(9)
         }
     }
     wheelRotation = (e) => {

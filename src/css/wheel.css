@@ -18,12 +18,13 @@
 }
 #wheel{
     border: 2px solid black;
-    width: 5px;
-    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 51%;
     padding:30px;
     position: absolute;
-    top:37%;
-    left:36%;
+    top:36.5%;
+    left:34.5%;
     background-color:#adadad;
     cursor: pointer;
 }
