@@ -1,0 +1,42 @@
+#lock
+{
+    border: 2px solid black;
+    margin-top:-10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height:197px;
+    text-align: center;
+    width: auto;
+}
+#image-container{
+    position: relative;
+}
+#lock img{
+    height: 90%;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 1;
+}
+#lock-icon
+{
+    font-size: 50px;
+    color:black;
+    position:absolute;
+    left:43%;
+    top:0%;
+    z-index: 3;
+    opacity: 0.6;
+}
+#text{
+    margin-top: -42px;
+    background-color: #6cd4ec;
+    /* border: 5px solid black; */
+    position: relative;
+    z-index:2;
+    
+}
+#text p{
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px;
+}

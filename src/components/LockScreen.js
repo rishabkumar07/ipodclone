@@ -1,5 +1,8 @@
-import React, {Component} from 'react'
-
+import React, {Component} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faLock} from '@fortawesome/free-solid-svg-icons';
+import Image from '../static/wallpaper1.jpg';
+import '../css/lockscreen.css';
 
 export default class LockScreen extends Component {
     mainMenu = () =>
@@ -17,10 +20,14 @@ export default class LockScreen extends Component {
     render(){
         return(
             <div id="lock">
-                <img src="" alt="lock" />
-                <div id="text">
-                <h3>Press Center Button to unlock!</h3>
+                <div id='image-container'>
+                    <img src={Image} alt="lock"  />
+                    <FontAwesomeIcon icon={faLock} id="lock-icon" />
                 </div>
+                <div id="text">
+                    <p>Press center button to unlock!</p>
+                </div>
+                
             </div>
         )
     }
