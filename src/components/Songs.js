@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ZingTouch from 'zingtouch';
-import Song from '../css/songs.css';
+import '../css/songs.css';
 export default class Songs extends Component{
     constructor(props)
     {
