@@ -24,15 +24,15 @@ class Wheel extends React.Component {
                     <div id="wheel"></div>
                     <div id="menu">MENU</div>
                     <div id="forward">
-                        <FontAwesomeIcon icon={faFastForward}  border className=""/>
+                        <FontAwesomeIcon icon={faFastForward}  />
                     </div>
                     <div id="play-pause">
-                        <FontAwesomeIcon icon={faPlay} border />
-                        <FontAwesomeIcon icon={faPause} border/>
+                        <FontAwesomeIcon icon={faPlay}  />
+                        <FontAwesomeIcon icon={faPause} />
                     
                     </div>
                     <div id="backward">
-                        <FontAwesomeIcon icon={faFastBackward} border/>
+                        <FontAwesomeIcon icon={faFastBackward} />
                     </div>
                 </div>
             </div>

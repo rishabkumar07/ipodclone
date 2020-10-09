@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import GamesImage from '../static/games1.jpg';
 
-export default class Games extends Component
+export default class Albums extends Component
 {
     constructor(props)
     {
@@ -11,9 +10,9 @@ export default class Games extends Component
     {
         // const activeMenu = this.state.activeMenu;
         const {screen,updateScreen} = this.props;
-        if(screen===5)
+        if(screen===9)
         {
-            updateScreen(1);
+            updateScreen(3);
         }
 
     }
@@ -25,10 +24,9 @@ export default class Games extends Component
     render()
     {
         return(
-            <div id="game-screen" style={{border:'2px solid black',margin:10,marginTop:'-10px',height:197,backgroundColor:'whitesmoke'}}>
-                <img src={GamesImage} alt='games-image' style={{height:'100%',width:'100%'}} />
+            <div id="album-screen" style={{border:'2px solid black',margin:10,marginTop:'-10px',height:197,backgroundColor:'whitesmoke'}}>
+                <h1 style={{textAlign:"center",marginTop:'28%'}}>Albums</h1>
             </div>
         )
     }
-    
 }

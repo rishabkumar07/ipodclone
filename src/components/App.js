@@ -5,9 +5,14 @@ import LockScreen from './LockScreen';
 import Screen from './Screen';
 import NowPlaying from './iNowPlaying';
 import Songs from './Songs';
+import AllSongs from './AllSongs';
+import Artists from './Artists';
+import Albums from './Albums';
 import Camera from './Camera';
 import Games from './Games';
 import Settings from './Settings';
+import Themes from './Themes';
+import WheelColor from './WheelColor';
 import Wheel from './Wheel';
 
 export default class App extends Component  {
@@ -37,6 +42,11 @@ export default class App extends Component  {
           {screen ===4 && <Camera screen={screen} updateScreen={this.updateScreen}  />}
           {screen ===5 && <Games screen={screen} updateScreen={this.updateScreen}  />}
           {screen ===6 && <Settings screen={screen} updateScreen={this.updateScreen} />}
+          {screen ===7 && <AllSongs screen={screen} updateScreen={this.updateScreen} />}
+          {screen ===8 && <Artists screen={screen} updateScreen={this.updateScreen} />}
+          {screen ===9 && <Albums screen={screen} updateScreen={this.updateScreen} />}
+          {screen ===10 && <Themes screen={screen} updateScreen={this.updateScreen} />}
+          {screen ===11 && <WheelColor screen={screen} updateScreen={this.updateScreen} />}
           <Wheel />
         </div>
       </div>

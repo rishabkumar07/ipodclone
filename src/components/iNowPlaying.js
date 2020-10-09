@@ -1,20 +1,45 @@
-import React,{Component} from 'react'
-
-const NowPlaying = (props) =>
+import React,{Component} from 'react';
+import '../css/nowplay.css';
+import Song1 from '../static/song1.png';
+export default class NowPlaying extends Component
 {
-    return(
-        <div id='song-container'>
-            <div>
-                <img src="" alt="image" />
-                <p id="song-title">Forever Love</p>
-                <p id="song-artist">Neha Srivastava</p>
-            </div>
-            <div id='bar'>
-                <div id='Duration'></div>
-                <span>0:00</span>
-                <span>3:56</span>
-            </div>
-        </div>
-    )
+    constructor(props)
+    {
+        super(props);
+    }
+    menubtn = () =>
+    {
+        const {screen,updateScreen} = this.props;
+        if(screen===2)
+        {
+            updateScreen(1);
+        }
+    }
+    componentDidMount = ()=>
+    {
+        var menubtn = document.getElementById('menu');
+        menubtn.onclick = this.menubtn;
+    }
+
+    render()
+    {
+        return(
+            <div id='song-container'>
+                <div id='song-details'>
+                    <div id="song-image-container">
+                        <img src={Song1} alt="image" />
+                    </div>
+                    <div id="song-desc">
+                        <p id="song-title">death bed</p>
+                        <p id="song-artist">Paused</p>
+                    </div>
+                </div>
+                <div id='bar'>
+                    <div>0:40</div>
+                    <div id="duration"></div>
+                    <div>3:56</div>
+                </div>
+            </div> 
+        )
+    }
 }
-export default NowPlaying;

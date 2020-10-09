@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ZingTouch from 'zingtouch';
-
+import Song from '../css/songs.css';
 export default class Songs extends Component{
     constructor(props)
     {
@@ -76,11 +76,23 @@ export default class Songs extends Component{
 
 
     }
+    menubtn = () =>
+    {
+        // const activeMenu = this.state.activeMenu;
+        const {screen,updateScreen} = this.props;
+        if(screen===3)
+        {
+            updateScreen(1);
+        }
+
+    }
     componentDidMount() {
         const wheelRotation = this.wheelRotation
         var target = document.getElementsByClassName('wheel-container')[0];
         var menuClick  = document.getElementById('wheel');
         menuClick.onclick = this.menuClick 
+        var menubtn = document.getElementById('menu');
+        menubtn.onclick = this.menubtn;
         var region = new ZingTouch.Region(target);
         // binding the region where rotate property will be applied
         region.bind(target, 'rotate', function (e) {
@@ -90,19 +102,21 @@ export default class Songs extends Component{
     render() {
         const { activeMenu, songMenu } = this.state;
         return (
-            <div id="song-menu-container">
+            <div id="song-screen">
+                <h3>Songs</h3>
                 <div id="song-menu">
+                <ul>
                     {songMenu.map(item => {
                         return (
-                            <div key={item.id} >
-                                <ul>
-                                    <li className={(item.id === activeMenu ? item.className = "active" : item.className = "inactive") }>
+                            <div key={item.id}>
+                                <li className={(item.id === activeMenu ? item.className = "active" : item.className = "inactive") }>
                                         {item.name}
-                                    </li>
-                                </ul>
+                                </li>
+                                
                             </div>
                         );
                     })}
+                    </ul>
                 </div>
             </div>)
     }  
