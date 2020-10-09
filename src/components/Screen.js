@@ -1,6 +1,11 @@
 import React,{Component} from 'react';
 import ZingTouch from 'zingtouch';
-import '../css/screen.css'
+import '../css/screen.css';
+import NowPlayingImage from '../static/coldplay.jpeg';
+import Songs from '../static/songshd.jpg';
+import Camera from '../static/camera2.jpg';
+import Games from '../static/games3.jpg';
+import Settings from '../static/settings3.jpg'
 
 export default class Screen extends Component {
     constructor(props)
@@ -153,11 +158,11 @@ render()
                     </ul>
                 </div>
                 <div id="right-block">
-                    {activeMenu === 1 && <img src='' alt='image' id='scimg' />}
-                    {activeMenu === 2 && <img src='' alt='image' id='scimg' />}
-                    {activeMenu === 3 && <img src='' alt='image' id='scimg' />}
-                    {activeMenu === 4 && <img src='' alt='image' id='scimg' />}
-                    {activeMenu === 5 && <img src='' alt='image' id='scimg' />}
+                    {activeMenu === 1 && <img src={NowPlayingImage} alt='image' id='scimg' />}
+                    {activeMenu === 2 && <img src={Songs} alt='image' id='scimg' />}
+                    {activeMenu === 3 && <img src={Camera} alt='image' id='scimg' />}
+                    {activeMenu === 4 && <img src={Games} alt='image' id='scimg' />}
+                    {activeMenu === 5 && <img src={Settings} alt='image' id='scimg' />}
                 </div>
  
             </div>

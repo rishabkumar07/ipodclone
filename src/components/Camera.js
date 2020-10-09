@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import Webcam from "react-webcam";
-
+import '../css/camera.css'
 class WebcamComponent extends Component
 { 
     constructor(props)
@@ -24,10 +24,10 @@ class WebcamComponent extends Component
     }
     render(){
     return(
-         <div id="cam-screen" style={{margin:'0' ,height:200}}>
+         <div id="cam-screen" >
             <Webcam 
-            height={200}
-            width={300} />
+            height={'100%'}
+            width={'100%'} />
          </div>
         )
     }
