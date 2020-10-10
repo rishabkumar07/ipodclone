@@ -5,6 +5,7 @@ export default class WheelColor extends Component{
     constructor(props)
     {
         super(props);
+        // defining the required states
         this.state = {
             wheelMenu:[
                 {
@@ -32,7 +33,9 @@ export default class WheelColor extends Component{
         }
     }
 
+    // zingtouch logic for wheel rotation
     wheelRotation = (e) => {
+        // for rotating backwards
         if(e.detail.distanceFromOrigin<0)
         {
             e.detail.distanceFromOrigin *=-1;
@@ -50,6 +53,7 @@ export default class WheelColor extends Component{
                 this.setState({ activeMenu: 0 })
             }
         }
+        // for forward rotation
         else{
             e.detail.distanceFromOrigin %= 120;
         
@@ -68,6 +72,7 @@ export default class WheelColor extends Component{
             }
             }
     }
+    // to go back
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;
@@ -90,6 +95,8 @@ export default class WheelColor extends Component{
         var menubtn = document.getElementById('menu');
         menubtn.onclick = this.menubtn;
         var menuClick  = document.getElementById('wheel');
+
+        // for changing color of the wheel dynamically based on options choosed
         menuClick.onclick = ()=>
         {
             const activeMenu = this.state.activeMenu;

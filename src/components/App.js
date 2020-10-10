@@ -15,6 +15,7 @@ import Themes from './Themes';
 import WheelColor from './WheelColor';
 import Wheel from './Wheel';
 
+// class based component
 export default class App extends Component  {
   constructor(props)
   {
@@ -24,6 +25,7 @@ export default class App extends Component  {
     }
 
   }
+  // to update the  current screen
   updateScreen = (screen) =>{
     this.setState({screen})
   }
@@ -35,6 +37,7 @@ export default class App extends Component  {
       <div className="app">
         <div className="case">
           <Navbar />
+          {/* component will be rendered based on the screen number */}
           {screen ===0 && <LockScreen screen={screen} updateScreen={this.updateScreen}  />}
           {screen ===1 && <Screen screen={screen} updateScreen={this.updateScreen}  />}
           {screen ===2 && <NowPlaying screen={screen} updateScreen={this.updateScreen} />}

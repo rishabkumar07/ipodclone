@@ -6,6 +6,7 @@ export default class Albums extends Component
     {
         super(props);
     }
+    // to go back to previous screen
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;

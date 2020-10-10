@@ -7,6 +7,7 @@ class WebcamComponent extends Component
     {
         super(props);
     }
+    // to go back on previous screen
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;
@@ -25,6 +26,7 @@ class WebcamComponent extends Component
     render(){
     return(
          <div id="cam-screen" >
+             {/* webcam component */}
             <Webcam 
             height={'100%'}
             width={'100%'} />

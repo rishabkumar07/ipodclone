@@ -5,9 +5,9 @@ import Image from '../static/wallpaper1.jpg';
 import '../css/lockscreen.css';
 
 export default class LockScreen extends Component {
+    // to go to the main screen
     mainMenu = () =>
     {
-        console.log('hey');
         const {updateScreen} = this.props
         updateScreen(1)
     }

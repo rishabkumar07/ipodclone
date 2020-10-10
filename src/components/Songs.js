@@ -5,6 +5,7 @@ export default class Songs extends Component{
     constructor(props)
     {
         super(props);
+        // defining the required states
         this.state=
         {
             songMenu:[
@@ -29,6 +30,7 @@ export default class Songs extends Component{
         }
     }
 
+    // function to update screen based on activemenu
     menuClick = () =>
     {
         const activeMenu = this.state.activeMenu;
@@ -44,6 +46,7 @@ export default class Songs extends Component{
             updateScreen(9)
         }
     }
+    // logic to change activemenu on wheel rotation
     wheelRotation = (e) => {
         if(e.detail.distanceFromOrigin<0)
         {
@@ -76,6 +79,7 @@ export default class Songs extends Component{
 
 
     }
+    // to go back on clicking menubtn
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;
@@ -106,6 +110,7 @@ export default class Songs extends Component{
                 <h3>Songs</h3>
                 <div id="song-menu">
                 <ul>
+                    {/* to change class to active or inactive based on current active menu */}
                     {songMenu.map(item => {
                         return (
                             <div key={item.id}>

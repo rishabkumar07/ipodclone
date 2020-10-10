@@ -7,6 +7,7 @@ export default class NowPlaying extends Component
     {
         super(props);
     }
+    // function to go back when clicked on menubtn
     menubtn = () =>
     {
         const {screen,updateScreen} = this.props;

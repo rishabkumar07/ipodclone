@@ -11,6 +11,7 @@ export default class Screen extends Component {
     constructor(props)
     {
         super(props);
+        // defining the states
         this.state = {
             screenMenu:[
                 {
@@ -43,6 +44,7 @@ export default class Screen extends Component {
         }
     }
 
+    // method to update screen based on current activeMenu
     menuClick = () => {
         const activeMenu = this.state.activeMenu;
         const {screen,updateScreen} = this.props;
@@ -70,8 +72,10 @@ export default class Screen extends Component {
 
     }
 
+    // to change active item on wheel rotation
     wheelRotation = (e) =>
     {
+        // for backward rotation
         if(e.detail.distanceFromOrigin<0)
         {
             e.detail.distanceFromOrigin *=-1;
@@ -92,6 +96,7 @@ export default class Screen extends Component {
                 this.setState({ activeMenu: 1 })
             }
         }
+        // for forward rotation
         else{
             e.detail.distanceFromOrigin %= 150;
         
@@ -113,6 +118,7 @@ export default class Screen extends Component {
             }
         }
     }
+    // menubutton click logic
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;
@@ -145,6 +151,7 @@ render()
             <div id="main">
                 <div id="left-block">
                     <ul>
+                        {/* to change classname to active or inactive based on the activemenu */}
                     {screenMenu.map(item => {
                         return (
                             <div key={item.id}>
@@ -157,6 +164,7 @@ render()
                     })}
                     </ul>
                 </div>
+                {/* changing images based on activeMenu */}
                 <div id="right-block">
                     {activeMenu === 1 && <img src={NowPlayingImage} alt='image' id='scimg' />}
                     {activeMenu === 2 && <img src={Songs} alt='image' id='scimg' />}

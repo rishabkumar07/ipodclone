@@ -7,10 +7,12 @@ export default class Nabvar extends Component{
     constructor(props)
     {
         super(props);
+        // defining state
         this.state = {
             currTime:null
         }
     }
+    // logic to display current time
     componentDidMount()
     {
         setInterval(()=>{

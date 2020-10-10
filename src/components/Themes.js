@@ -6,6 +6,7 @@ export default class Themes extends Component{
     {
         super(props);
         this.state = {
+            // defining states
             themeMenu:[
                 {
                     id:0,
@@ -31,6 +32,7 @@ export default class Themes extends Component{
             activeMenu:0
         }
     }
+    // zingtouch logic for rotation based on activemenu
     wheelRotation = (e) => {
         if(e.detail.distanceFromOrigin<0)
         {
@@ -67,6 +69,7 @@ export default class Themes extends Component{
             }
             }
     }
+    // to go back to previous screen
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;
@@ -91,6 +94,8 @@ export default class Themes extends Component{
         menubtn.onclick = this.menubtn;
         var ipod = document.getElementsByClassName('case')[0];
         var menuClick  = document.getElementById('wheel');
+        
+        // to change color of the ipod dynamically based on the options choosed
         menuClick.onclick = ()=>
         {
             const activeMenu = this.state.activeMenu;

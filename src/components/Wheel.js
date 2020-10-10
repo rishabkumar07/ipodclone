@@ -6,6 +6,7 @@ import '../css/wheel.css'
 
 class Wheel extends React.Component {
 
+    // binding region to zingtouch
     componentDidMount()
     {
         const touchArea = document.getElementsByClassName('wheel-container');

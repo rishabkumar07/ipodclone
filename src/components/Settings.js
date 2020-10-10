@@ -7,6 +7,7 @@ export default class Settings extends Component
     {
         super(props);
         this.state = {
+            // defining states required
             settingMenu:[
                 {
                     id:0,
@@ -22,6 +23,7 @@ export default class Settings extends Component
             activeMenu:0
         }
     }
+    // to update screen based on selected activemenu
     menuClick = () =>
     {
         const activeMenu = this.state.activeMenu;
@@ -38,7 +40,9 @@ export default class Settings extends Component
 
     }
 
+    // zing touch logic for rotation
     wheelRotation = (e) => {
+        // for backward rotation
         if(e.detail.distanceFromOrigin<0)
         {
             e.detail.distanceFromOrigin *=-1;
@@ -50,6 +54,7 @@ export default class Settings extends Component
                 this.setState({ activeMenu: 0 })
             }
         }
+        // for forward rotation
         else{
             e.detail.distanceFromOrigin %= 60;
         
@@ -62,6 +67,7 @@ export default class Settings extends Component
             }
             }
     }
+    // to go back to previous screen on clicking menu btn
     menubtn = () =>
     {
         // const activeMenu = this.state.activeMenu;
