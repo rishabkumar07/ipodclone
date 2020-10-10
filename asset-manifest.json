@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/ipodclone/static/css/main.cb3fd9d6.chunk.css",
+    "main.js": "/ipodclone/static/js/main.1a16e6db.chunk.js",
+    "main.js.map": "/ipodclone/static/js/main.1a16e6db.chunk.js.map",
+    "runtime-main.js": "/ipodclone/static/js/runtime-main.255240af.js",
+    "runtime-main.js.map": "/ipodclone/static/js/runtime-main.255240af.js.map",
+    "static/js/2.e17b35d0.chunk.js": "/ipodclone/static/js/2.e17b35d0.chunk.js",
+    "static/js/2.e17b35d0.chunk.js.map": "/ipodclone/static/js/2.e17b35d0.chunk.js.map",
+    "index.html": "/ipodclone/index.html",
+    "precache-manifest.d7fe928bcd4a938e41c987a0109926cf.js": "/ipodclone/precache-manifest.d7fe928bcd4a938e41c987a0109926cf.js",
+    "service-worker.js": "/ipodclone/service-worker.js",
+    "static/css/main.cb3fd9d6.chunk.css.map": "/ipodclone/static/css/main.cb3fd9d6.chunk.css.map",
+    "static/js/2.e17b35d0.chunk.js.LICENSE.txt": "/ipodclone/static/js/2.e17b35d0.chunk.js.LICENSE.txt",
+    "static/media/camera2.jpg": "/ipodclone/static/media/camera2.2f3dd8df.jpg",
+    "static/media/coldplay.jpeg": "/ipodclone/static/media/coldplay.3ba0e1fc.jpeg",
+    "static/media/games1.jpg": "/ipodclone/static/media/games1.ef638192.jpg",
+    "static/media/games3.jpg": "/ipodclone/static/media/games3.71668b41.jpg",
+    "static/media/settings3.jpg": "/ipodclone/static/media/settings3.a755d8f3.jpg",
+    "static/media/song1.png": "/ipodclone/static/media/song1.adbef2d1.png",
+    "static/media/songshd.jpg": "/ipodclone/static/media/songshd.46114d95.jpg",
+    "static/media/wallpaper1.jpg": "/ipodclone/static/media/wallpaper1.f0ad6859.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.255240af.js",
+    "static/js/2.e17b35d0.chunk.js",
+    "static/css/main.cb3fd9d6.chunk.css",
+    "static/js/main.1a16e6db.chunk.js"
+  ]
+}
